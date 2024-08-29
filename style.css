@@ -1,0 +1,46 @@
+/* Make sure the body and html take up the full height of the viewport */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff; /* Light blue background */
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    position: relative; /* To position children absolutely */
+    overflow: hidden; /* Hide any overflow */
+}
+
+#flowers img {
+    position: absolute; /* Position image absolutely within the container */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Cover the area without distortion */
+    z-index: 1; /* Ensure image is below the text */
+}
+
+#text {
+    position: absolute; /* Position text absolutely within the container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact center alignment */
+    display: none; /* Hide initially */
+    padding: 20px;
+    font-size: 1.5em;
+    color: #333; /* Dark text color for better readability */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for text */
+    border-radius: 8px;
+    max-width: 80vw;
+    text-align: center;
+    z-index: 2; /* Ensure text is above the image */
+}
